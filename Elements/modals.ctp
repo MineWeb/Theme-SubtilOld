@@ -13,13 +13,58 @@
 					  data-redirect-url="?">
 
 					<div class="form-group">
+						<h6><?= $Lang->get('USER__USERNAME') ?></h6>
 						<input type="text" class="form-control" name="pseudo" id="inputEmail3"
 							   placeholder="<?= $Lang->get('USER__USERNAME_LABEL') ?>">
 					</div>
 
 					<div class="form-group">
-						<input type="password" class="form-control" name="password"
-							   placeholder="<?= $Lang->get('USER__PASSWORD_LABEL') ?>">
+						<h6><?= $Lang->get('USER__PASSWORD') ?></h6>
+						<div class="row" style="margin-left: 1px;margin-right: -1px;">
+							<input type="password" class="form-control w-75" name="password"
+									   placeholder="<?= $Lang->get('USER__PASSWORD_LABEL') ?>">
+							<button class="unmask btn btn-secondary w-25" type="button" title="Afficher le mot de passe">Afficher</button>
+						</div>
+<script type="text/javascript">
+function changeType(x, type) {
+   if(x.prop('type') == type)
+      return x;
+   try {
+      return x.prop('type', type);
+   } 
+   catch(e) {
+      var html = $("<div>").append(x.clone()).html();
+      var regex = /type=(\")?([^\"\s]+)(\")?/;
+      var tmp = $(html.match(regex) == null ?
+         html.replace(">", ' type="' + type + '">') :
+         html.replace(regex, 'type="' + type + '"') );
+
+      tmp.data('type', x.data('type') );
+      var events = x.data('events');
+      var cb = function(events) {
+         return function() {
+            for(i in events) {
+               var y = events[i];
+               for(j in y) tmp.bind(i, y[j].handler);
+            }
+         }
+      }(events);
+      x.replaceWith(tmp);
+      setTimeout(cb, 10);
+      return tmp;
+   }
+}
+$('.unmask').on('click', function(){
+  
+  if($(this).prev('input').attr('type') == 'password')
+    changeType($(this).prev('input'), 'text');
+  
+  else
+    changeType($(this).prev('input'), 'password');
+  
+  return false;
+});
+</script>
 					</div>
 					<div class="row">
 						<div class="col-lg-6">
@@ -57,6 +102,7 @@
       <div class="card-body">
         <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('plugin' => null, 'admin' => false, 'controller' => 'user', 'action' => 'ajax_lostpasswd')) ?>">
           <div class="form-group">
+			  <h6><?= $Lang->get('USER__EMAIL') ?> </h6>
               <input type="text" class="form-control" name="email" placeholder="<?= $Lang->get('USER__EMAIL_LABEL') ?>">
           </div>
       </div>
@@ -81,9 +127,11 @@
             <input type="hidden" name="key" value="<?= $resetpsswd['key'] ?>">
             <input type="hidden" name="email" value="<?= $resetpsswd['email'] ?>">
             <div class="form-group">
+				<h6><?= $Lang->get('USER__PASSWORD') ?></h6>
                 <input type="password" class="form-control" name="password" placeholder="<?= $Lang->get('USER__PASSWORD_LABEL') ?>">
             </div>
             <div class="form-group">
+				<h6><?= $Lang->get('USER__PASSWORD_CONFIRM') ?></h6>
                 <input type="password" class="form-control" name="password2" placeholder="<?= $Lang->get('USER__PASSWORD_CONFIRM_LABEL') ?>">
             </div>
         </div>
@@ -106,26 +154,32 @@
       <div class="card-body">
         <form class="form-horizontal" method="POST" data-ajax="true" action="<?= $this->Html->url(array('plugin' => null, 'admin' => false, 'controller' => 'user', 'action' => 'ajax_register')) ?>" data-redirect-url="?">
           <div class="form-group">
+		      <h6><?= $Lang->get('USER__USERNAME') ?></h6>
               <input type="text" class="form-control" name="pseudo" placeholder="<?= $Lang->get('USER__USERNAME_LABEL') ?>">
           </div>
           <div class="form-group">
+			  <h6><?= $Lang->get('USER__PASSWORD') ?></h6>
               <input type="password" class="form-control" name="password" placeholder="<?= $Lang->get('USER__PASSWORD_LABEL') ?>">
           </div>
           <div class="form-group">
+			  <h6><?= $Lang->get('USER__PASSWORD_CONFIRM') ?></h6>
               <input type="password" class="form-control" name="password_confirmation" placeholder="<?= $Lang->get('USER__PASSWORD_CONFIRM_LABEL') ?>">
           </div>
           <div class="form-group">
+			  <h6><?= $Lang->get('USER__EMAIL') ?> </h6>
               <input type="email" class="form-control" name="email" placeholder="<?= $Lang->get('USER__EMAIL_LABEL') ?>">
           </div>
           
           <?php if($reCaptcha['type'] == "google") { ?>
             <script src='https://www.google.com/recaptcha/api.js'></script>
             <div class="form-group">
+				<h6><?= $Lang->get('FORM__CAPTCHA') ?></h6>
                 <div class="g-recaptcha" data-sitekey="<?= $reCaptcha['siteKey'] ?>"></div>
             </div>
           <?php } else { ?>
           
             <div class="form-group">
+				<h6><?= $Lang->get('FORM__CAPTCHA') ?></h6>
                 <?php
                   echo $this->Html->image(array('controller' => 'user', 'action' => 'get_captcha', 'plugin' => false, 'admin' => false), array('plugin' => false, 'admin' => false, 'id' => 'captcha_image'));
                   echo $this->Html->link($Lang->get('FORM__RELOAD_CAPTCHA'), 'javascript:void(0);',array('id' => 'reload'));
