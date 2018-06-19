@@ -44,8 +44,10 @@
 						<div class="section">
 							<p><b><?= $Lang->get('GLOBAL__CREATED') ?> :</b> <?= $Lang->date($user['created']) ?></p>
 						</div>
+						<?= $Module->loadModules('user_profile') ?>
 					</div>
 					<div class="card-footer">
+					
 					</div>
 				</div>
 			</div>
@@ -221,6 +223,6 @@
 				</div>
 			</div>
 			<?php } ?>
-			<?= $Module->loadModules('user_profile') ?>
+			
 		</div>
 </section>
