@@ -11,8 +11,6 @@
 					<div class="card-header title"><h3>Informations personnels</h3>
 					</div>
 					<div class="card-body">
-						<?= $Module->loadModules('user_profile_messages') ?>
-
 						<div class="section">
 							<p><b><?= $Lang->get('USER__USERNAME') ?> :</b> <?= $user['pseudo'] ?></p>
 						</div>
@@ -45,6 +43,7 @@
 							<p><b><?= $Lang->get('GLOBAL__CREATED') ?> :</b> <?= $Lang->date($user['created']) ?></p>
 						</div>
 						<?= $Module->loadModules('user_profile') ?>
+						<?= $Module->loadModules('user_profile_messages') ?>
 					</div>
 					<div class="card-footer">
 					
@@ -191,6 +190,20 @@
 					</div>
 				</div>
 			</div>
+			<?php if($EyPlugin->isInstalled('kenshimdev.xenbridge')) { ?>
+			<div class="col-lg-12" id="profil">
+				<div class="card h-100">
+					<div class="card-header title"><h3><?= $Lang->get('XENBRIDGE_STATS_FORUM') ?></h3>
+					</div>
+					<div class="card-body">
+					<?= $Module->loadModules('user_profile_forum') ?>
+					</div>
+					<div class="card-footer">
+					
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 
 			<?php if($EyPlugin->isInstalled('eywek.shop')) { ?>
 			<div class="col-lg-12">
