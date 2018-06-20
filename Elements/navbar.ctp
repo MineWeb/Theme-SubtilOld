@@ -11,7 +11,7 @@
 	<?php if($theme_config['logo'] != ""): ?>
 		<img class="pulse" src="<?= $theme_config['logo'] ?>"/>
 	<?php else: ?>
-		<h6><?= $website_name ?></h6>
+		<a href="/"><h6><?= $website_name ?></h6></a>
 	<?php endif; ?>
 
 
