@@ -81,23 +81,41 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 											   placeholder="Favicon url" class="form-control"
 											   name="accueil[favicon]" cols="30" rows="10">
 									</div>
-																		
+									
+									<div class="form-group">
+										<label>Slider et texte défilant</label>
+										<div class="col-md-12">
+											<p>Titre</p>
+											<input type="text" value="<?= $config['accueil']->title ?>"
+												   placeholder="Titre" class="form-control"
+												   name="accueil[title]" cols="30" rows="10">
+											<p>Sous-titre</p>
+											<input type="text" value="<?= $config['accueil']->subtitle ?>"
+												   placeholder="Image" class="form-control"
+												   name="accueil[subtitle]" cols="30" rows="10">
+											<p>Texte defilant</p>
+											<p style="color:red">Laisser vide pour désactiver</p>
+											<input type="text" value="<?= $config['accueil']->textslider ?>"
+												   placeholder="Description" class="form-control"
+												   name="accueil[textslider]" cols="30" rows="10">
+										</div>
+									</div>								
 									<div class="form-group">
 										<label>Section</label>
-									<div class="col-md-12">
-										<p>Titre</p>
-										<input type="text" value="<?= $config['accueil']->section->titre ?>"
-											   placeholder="Titre" class="form-control"
-											   name="accueil[section][titre]" cols="30" rows="10">
-										<p>Image</p>
-										<input type="text" value="<?= $config['accueil']->section->img ?>"
-											   placeholder="Image" class="form-control"
-											   name="accueil[section][img]" cols="30" rows="10">
-										<p>Description</p>
-										<input type="text" value="<?= $config['accueil']->section->desc ?>"
-											   placeholder="Description" class="form-control"
-											   name="accueil[section][desc]" cols="30" rows="10">
-									</div>
+										<div class="col-md-12">
+											<p>Titre</p>
+											<input type="text" value="<?= $config['accueil']->section->titre ?>"
+												   placeholder="Titre" class="form-control"
+												   name="accueil[section][titre]" cols="30" rows="10">
+											<p>Image</p>
+											<input type="text" value="<?= $config['accueil']->section->img ?>"
+												   placeholder="Image" class="form-control"
+												   name="accueil[section][img]" cols="30" rows="10">
+											<p>Description</p>
+											<input type="text" value="<?= $config['accueil']->section->desc ?>"
+												   placeholder="Description" class="form-control"
+												   name="accueil[section][desc]" cols="30" rows="10">
+										</div>
 									</div>
 								</div>
 
