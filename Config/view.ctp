@@ -56,12 +56,31 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 							<div class="row">
 								<div class="box-body" style="">
 									<div class="form-group">
+										<input type="checkbox" id="navbar" name="navbar" value="<?= $config['navbar'] ?>" <?= (isset($config['navbar']) && $config['navbar'] == 'true') ? ' checked' : '' ?>>
+										<label for="navbar">Utiliser la nouvelle apparence de la navbar ?</label>
+										<script>
+											$('#navbar').change(function(){
+												if($('#navbar').is(':checked')) {
+													$('#navbar').attr('value', 'true');
+												} else {
+													$('#navbar').attr('value', 'false');
+												}
+											});
+											if($('#navbar').is(':checked')) {
+												$('#navbar').attr('value', 'true');
+											} else {
+												$('#navbar').attr('value', 'false');
+											}
+										</script>
+									</div>
+									<div class="form-group">
 										<label>IP du serveur</label>
 										<p>Entrez l'ip du serveur.</p>
 										<input type="text" value="<?= $config['accueil']->ip ?>"
 											   placeholder="Play.mineweb.com" class="form-control"
 											   name="accueil[ip]" cols="30" rows="10">
 									</div>
+									
 									<div class="form-group">
 										<label>Logo</label>
 										<p>Télécharger votre logo.</p>
@@ -81,7 +100,6 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 											   placeholder="Favicon url" class="form-control"
 											   name="accueil[favicon]" cols="30" rows="10">
 									</div>
-									
 									<div class="form-group">
 										<label>Slider et texte défilant</label>
 										<div class="col-md-12">
