@@ -221,8 +221,8 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 												   placeholder="Description"
 												   value="<?= $config['service']->un->description ?>">
 											<br>
-											<input type="text" class="form-control" name="service[un][image]"
-												   placeholder="Image" value="<?= $config['service']->un->image ?>">
+											<input type="text" class="form-control" name="service[un][icon]"
+												   placeholder="Icone" value="<?= $config['service']->un->icon ?>">
 											<input type="text" class="form-control" name="service[un][lien]"
 												   placeholder="Lien" value="<?= $config['service']->un->lien ?>">
 										</div>
@@ -236,8 +236,8 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 												   placeholder="Description"
 												   value="<?= $config['service']->deux->description ?>">
 											<br>
-											<input type="text" class="form-control" name="service[deux][image]"
-												   placeholder="Image" value="<?= $config['service']->deux->image ?>">
+											<input type="text" class="form-control" name="service[deux][icon]"
+												   placeholder="Icone" value="<?= $config['service']->deux->icon ?>">
 											<input type="text" class="form-control" name="service[deux][lien]"
 												   placeholder="Lien" value="<?= $config['service']->deux->lien ?>">
 										</div>
@@ -251,8 +251,8 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 												   placeholder="Description"
 												   value="<?= $config['service']->trois->description ?>">
 											<br>
-											<input type="text" class="form-control" name="service[trois][image]"
-												   placeholder="Image" value="<?= $config['service']->trois->image ?>">
+											<input type="text" class="form-control" name="service[trois][icon]"
+												   placeholder="Icone" value="<?= $config['service']->trois->icon ?>">
 											<input type="text" class="form-control" name="service[trois][lien]"
 												   placeholder="Lien" value="<?= $config['service']->trois->lien ?>">
 										</div>
