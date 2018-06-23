@@ -212,6 +212,13 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 						<div class="tab-pane" id="config-services">
 							<div class="row">
 								<div class="box-body" style="">
+									<div class="form-group">
+										<label>Slider des services</label>
+										<p>Entrez l'url du Slider.</p>
+										<input type="text" value="<?= $config['accueil']->slider2 ?>"
+											   placeholder="Slider url" class="form-control"
+											   name="accueil[slider2]" cols="30" rows="10">
+									</div>
 									<div class="col-lg-4 col-sm-12">
 										<div class="form-group">
 											<label>Service 1</label>

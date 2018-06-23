@@ -13,7 +13,12 @@
 		</div>
 	</div>
 </section>
-<section id="services">
+<section id="services"
+	<?php if($theme_config['accueil']->slider2 != ""): ?>
+		style="background: url('<?= $theme_config['accueil']->slider2 ?>') no-repeat;background-size: cover;background-position: center;"
+	<?php else: ?>
+		style="background: url(theme/Subtil/img/banniere.png) no-repeat;background-size: cover;background-position: center;"
+	<?php endif; ?>>
 	<div class="title-services">
 		Services
 	</div>
