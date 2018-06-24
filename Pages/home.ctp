@@ -1,14 +1,17 @@
 <section id="home-up">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="thumbnail img1" style="background: url(<?= $theme_config['accueil']->section->img ?>) no-repeat;">
+		<div class="jumbotron jumbotron-fluid text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="thumbnail img1" style="background: url(<?= $theme_config['accueil']->section->img ?>) no-repeat;">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<h1 class="display-3 title"><?= $theme_config['accueil']->section->titre ?></h1>
+						<p class="lead"><?= $theme_config['accueil']->section->desc ?></p>
+					</div>
 				</div>
-			</div>
-
-			<div class="col-md-8">
-				<h1 class="title"><?= $theme_config['accueil']->section->titre ?></h1>
-				<p class="lead"><?= $theme_config['accueil']->section->desc ?></p>
 			</div>
 		</div>
 	</div>
@@ -73,6 +76,7 @@
 			<div class="col-lg-4 mb-4">
 				<div class="card h-100">
 					<h4 class="card-header title"><?= $v['News']['title'] ?></h4>
+					
 					<div class="card-body" style="overflow:hidden;">
 						<p class="card-text">
 							<?php
