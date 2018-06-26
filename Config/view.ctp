@@ -100,6 +100,7 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 											   placeholder="Favicon url" class="form-control"
 											   name="accueil[favicon]" cols="30" rows="10">
 									</div>
+									<?php if($theme_config['navbar']): ?>
 									<div class="form-group">
 										<label>Slider et texte défilant</label>
 										<div class="col-md-12">
@@ -117,7 +118,8 @@ echo $this->Html->script('admin/tinymce/tinymce.min.js');
 												   placeholder="Description" class="form-control"
 												   name="accueil[textslider]" cols="30" rows="10">
 										</div>
-									</div>								
+									</div>
+									<?php endif; ?>
 									<div class="form-group">
 										<label>Section</label>
 										<div class="col-md-12">
