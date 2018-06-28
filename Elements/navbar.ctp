@@ -37,6 +37,14 @@
 			</a>
 			<?php endif; ?>
 			<?php endif; ?>
+			<?php if(!$isConnected): ?>
+				<a href="#login" data-toggle="modal" class="nav-link" style="margin-right:20px;">
+					<?= $Lang->get('USER__LOGIN') ?> 
+				</a>
+				<a href="#register" data-toggle="modal" class="nav-link">
+					<?= $Lang->get('USER__REGISTER') ?> 
+				</a>
+			<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -46,24 +54,12 @@
 <section id="nav">
 	<div class="container">
 		<div class="row">
-			<div class="col-4 nav-left">
+			<div class="col-12 text">
 				<?php if($theme_config['logo'] != ""): ?>
 					<img src="<?= $theme_config['logo'] ?>"/>
 				<?php else: ?>
 					<a class="title" href="/"><?= $website_name ?></a>
 				<?php endif; ?>
-			</div>
-			<div class="col-8">
-					<div class="nav">
-						<?php if(!$isConnected): ?>
-							<a href="#login" data-toggle="modal" class="nav-link">
-								<?= $Lang->get('USER__LOGIN') ?> 
-							</a>
-							<a href="#register" data-toggle="modal" class="nav-link">
-								<?= $Lang->get('USER__REGISTER') ?> 
-							</a>
-						<?php endif; ?>
-					</div>
 			</div>
 		</div>
 	</div>
